@@ -28,6 +28,7 @@ files({
 	'client/html/sounds/PinFail.ogg',
 	'client/html/sounds/PinSucc.ogg',
 	'client/html/sounds/shake.ogg',
+	'client/html/sounds/sms.ogg',
 	'client/html/sounds/cuff.ogg',
 	'client/html/sounds/unlock.ogg'
 })
