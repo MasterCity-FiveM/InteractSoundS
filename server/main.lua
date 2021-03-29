@@ -1,4 +1,6 @@
+ESX = nil
 
+TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 ------
 -- Interaction Sounds by Scott
 -- Version: v0.0.1
@@ -26,6 +28,7 @@
 ------
 RegisterServerEvent('InteractSound_SV:PlayOnOne')
 AddEventHandler('InteractSound_SV:PlayOnOne', function(clientNetId, soundFile, soundVolume)
+    ESX.RunCustomFunction("anti_ddos", source, 'InteractSound_SV:PlayOnOne', {clientNetId = clientNetId, soundFile = soundFile, soundVolume = soundVolume})
     TriggerClientEvent('InteractSound_CL:PlayOnOne', clientNetId, soundFile, soundVolume)
 end)
 
@@ -44,6 +47,7 @@ end)
 ------
 RegisterServerEvent('InteractSound_SV:PlayOnSource')
 AddEventHandler('InteractSound_SV:PlayOnSource', function(soundFile, soundVolume)
+    ESX.RunCustomFunction("anti_ddos", source, 'InteractSound_SV:PlayOnSource', {soundFile = soundFile, soundVolume = soundVolume})
     TriggerClientEvent('InteractSound_CL:PlayOnOne', source, soundFile, soundVolume)
 end)
 
@@ -61,6 +65,7 @@ end)
 ------
 RegisterServerEvent('InteractSound_SV:PlayOnAll')
 AddEventHandler('InteractSound_SV:PlayOnAll', function(soundFile, soundVolume)
+    ESX.RunCustomFunction("anti_ddos", source, 'InteractSound_SV:PlayOnAll', {soundFile = soundFile, soundVolume = soundVolume})
     TriggerClientEvent('InteractSound_CL:PlayOnAll', -1, soundFile, soundVolume)
 end)
 
@@ -83,5 +88,6 @@ end)
 ------
 RegisterServerEvent('InteractSound_SV:PlayWithinDistance')
 AddEventHandler('InteractSound_SV:PlayWithinDistance', function(maxDistance, soundFile, soundVolume)
+    ESX.RunCustomFunction("anti_ddos", source, 'InteractSound_SV:PlayWithinDistance', {maxDistance = maxDistance, soundFile = soundFile, soundVolume = soundVolume})
     TriggerClientEvent('InteractSound_CL:PlayWithinDistance', -1, source, maxDistance, soundFile, soundVolume)
 end)
