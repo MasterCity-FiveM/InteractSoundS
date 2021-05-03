@@ -66,7 +66,7 @@ end)
 RegisterServerEvent('InteractSound_SV:PlayOnAll')
 AddEventHandler('InteractSound_SV:PlayOnAll', function(soundFile, soundVolume)
     ESX.RunCustomFunction("anti_ddos", source, 'InteractSound_SV:PlayOnAll', {soundFile = soundFile, soundVolume = soundVolume})
-    TriggerClientEvent('InteractSound_CL:PlayOnAll', -1, soundFile, soundVolume)
+    --TriggerClientEvent('InteractSound_CL:PlayOnAll', -1, soundFile, soundVolume)
 end)
 
 ------
