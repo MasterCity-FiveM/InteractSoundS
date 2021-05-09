@@ -3,7 +3,7 @@ fx_version 'adamant'
 game 'gta5'
 
 -- Client Scripts
-client_script 'client/main.lua'
+client_script 'client/*.lua'
 
 -- Server Scripts
 server_script 'server/main.lua'
